@@ -8,9 +8,9 @@ import CustomButton from "../components/CustomButton";
 import { useGlobalContext } from "../context/GlobalProvider";
 
 export default function App() {
-  // const { isLoading, isLogged } = useGlobalContext();
+  const { isLoading, isLogged } = useGlobalContext();
 
-  // if (!isLoading && isLogged) return <Redirect href="/home" />;
+  if (!isLoading && isLogged) return <Redirect href="/home" />;
 
   return (
     <SafeAreaView className="bg-primary h-full">
@@ -32,11 +32,11 @@ export default function App() {
             Learn and grow with a healthy diet
           </Text>
 
-          {/* <CustomButton
+          <CustomButton
             title="Continue with Email"
             handlePress={() => router.push("/sign-in")}
             containerStyles="w-full mt-7"
-          /> */}
+          />
         </View>
       </ScrollView>
 
