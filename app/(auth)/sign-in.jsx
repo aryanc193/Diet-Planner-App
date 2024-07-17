@@ -45,11 +45,11 @@ const SignIn = () => {
           <Image
             source={images.logo}
             resizeMode="contain"
-            className="w-[115px] h-[34px]"
+            className="w-[200px] -left-10"
           />
 
           <Text className="text-2xl font-semibold text-white mt-10 font-psemibold">
-            Log in to Aora
+            Log in
           </Text>
 
           <FormField
