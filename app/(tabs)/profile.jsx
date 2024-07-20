@@ -11,7 +11,7 @@ import InfoBox from "../../components/InfoBox.jsx";
 
 const Profile = () => {
   const { user, setUser, setIsLogged } = useGlobalContext();
-  const { data: posts } = useAppwrite(() => getUserPosts(user.$id));
+  // const { data: posts } = useAppwrite(() => getUserPosts(user.$id));
 
   const logout = async () => {
     await signOut();
@@ -24,8 +24,8 @@ const Profile = () => {
   return (
     <SafeAreaView className="bg-primary h-full">
       <FlatList
-        data={posts}
-        keyExtractor={(item) => item.$id}
+        // data={posts}
+        // keyExtractor={(item) => item.$id}
         ListEmptyComponent={() => (
           <EmptyState
             title="No Plans yet"
