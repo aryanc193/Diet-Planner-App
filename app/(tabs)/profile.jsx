@@ -219,7 +219,7 @@ const Profile = () => {
                 Avg calories consumed in the last week
               </Text>
               <Text className="text-6xl py-3 mt-4 mb-0 font-extrabold text-white">
-                {weeklyAvgCalories} kcal
+                {weeklyAvgCalories.toFixed(0)} kcal
               </Text>
             </View>
             <View className="w-full bg-red-500 p-4 rounded-lg items-center mb-5">
@@ -227,7 +227,7 @@ const Profile = () => {
                 Avg calories consumed in the last month
               </Text>
               <Text className="text-6xl py-3 mt-4 mb-0 font-extrabold text-white">
-                {monthlyAvgCalories} kcal
+                {monthlyAvgCalories.toFixed(0)} kcal
               </Text>
             </View>
             <Text className="text-2xl mt-10 -mb-10 text-black">
@@ -265,7 +265,10 @@ const Profile = () => {
         transparent={true}
         onRequestClose={() => setModalVisible(false)}
       >
-        <View className="flex-1 justify-center items-center bg-black bg-opacity-50">
+        <View
+          className="flex-1 justify-center items-center"
+          style={{ backgroundColor: "rgba(0,0,0, 0.7)" }}
+        >
           <View className="bg-white w-[90%] rounded-lg p-6">
             <Text className="text-2xl font-bold mb-4">Edit Profile</Text>
             <TextInput
@@ -291,15 +294,15 @@ const Profile = () => {
             />
             <CustomButton
               title="Save"
-              onPress={handleSave}
-              className="bg-green-500 p-4 rounded-lg mb-4"
-              textClassName="text-white text-lg font-bold text-center"
+              handlePress={handleSave}
+              containerStyles="bg-green-500 p-4 rounded-lg mb-4"
+              textStyles="text-white text-lg font-bold text-center"
             />
             <CustomButton
               title="Cancel"
-              onPress={() => setModalVisible(false)}
-              className="bg-red-500 p-4 rounded-lg"
-              textClassName="text-white text-lg font-bold text-center"
+              handlePress={() => setModalVisible(false)}
+              containerStyles="bg-red-500 p-4 rounded-lg"
+              textStyles="text-white text-lg font-bold text-center"
             />
           </View>
         </View>
